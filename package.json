@@ -5,6 +5,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "dev:share": "pnpm --filter @safeaura/web dev:share",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md,json,css}\""
   },
