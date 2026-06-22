@@ -1,0 +1,25 @@
+{
+  "name": "@safeaura/database",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "prisma generate && tsc"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.14.0"
+  },
+  "devDependencies": {
+    "@safeaura/typescript-config": "workspace:*",
+    "prisma": "^5.14.0",
+    "typescript": "^5.4.5"
+  }
+}

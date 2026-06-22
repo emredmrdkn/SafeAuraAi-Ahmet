@@ -1,0 +1,69 @@
+# SafeAura AI Architectural Rules & Guidelines
+
+You are developing SafeAura AI, a monorepo-based application designed for thermal drone image analysis and reporting. Always strictly adhere to the following architecture, coding standards, and project structure guidelines.
+
+---
+
+## 🏗️ Monorepo structure
+
+- **Monorepo Manager:** `pnpm workspaces` & `Turborepo`.
+- **Directory Layout:**
+  - `apps/web`: Next.js 15 App Router Frontend.
+  - `apps/api`: NestJS Backend API.
+  - `packages/typescript-config`: Shared TypeScript compiler configurations.
+  - `packages/tailwind-config`: Shared CSS-first styling configurations for Tailwind CSS v4.
+  - `packages/database`: Shared database package using Prisma ORM & PostgreSQL client.
+  - `packages/types`: Shared TypeScript definitions and data interfaces.
+
+---
+
+## 🔒 Coding & Quality Standards
+
+### TypeScript
+- All packages must run in strict mode (`strict: true`).
+- Ensure no implicit `any` is used, and type safety is maintained across application boundaries.
+- Prefer explicit return types for public-facing API routes, methods, and helpers.
+- Use `noUncheckedIndexedAccess: true` to prevent unsafe array indexing.
+
+### Tailwind CSS v4
+- **CSS-First Theme Config:** Do NOT use legacy `tailwind.config.js` Javascript-based files. All Tailwind configurations must be done using CSS `@theme` declarations inside the CSS files.
+- **Shared Tokens:** Import the shared theme from `@safeaura/tailwind-config/globals.css`.
+- **Content Scanning:** Use `@source "../../packages/ui/src/**/*.{js,ts,jsx,tsx}"` (or respective path definitions) to scan utility classes from shared modules.
+- **Aesthetics:** Utilize premium dark background themes (obsidian & dark blue slate), neon teal (`--color-brand-500`) for the "SafeAura" branding, and violet/electric indigo (`--color-accent-500`) for the AI visual cues.
+
+---
+
+## 🔄 Backend Architectural Guidelines (NestJS)
+
+- **Design Pattern:** Strictly follow NestJS's dependency injection (DI) and modular structure.
+- **Modules:** Create clean, domain-specific modules (e.g., `AuthModule`, `DroneModule`, `ThermalImageModule`, `AIAnalysisModule`, `ReportModule`).
+- **Authentication:** Use Clerk for identity management. Protect NestJS controllers using custom JWT guards validated against Clerk's JWKS endpoint (`passport-jwt` + `jwks-rsa`).
+- **Database Access:** All DB communication must flow through the Prisma Client, optimized for PgBouncer/connection pooling.
+- **Background Tasks:** Use Redis and BullMQ for queuing heavy and asynchronous tasks (e.g., PDF generation, AI model execution).
+
+---
+
+## 🌐 Frontend Architectural Guidelines (Next.js 15)
+
+- **Routing:** Use Next.js 15 App Router (`app/` directory).
+- **Authentication:** Protect pages and routes with Clerk middleware. Secure client-side flows with standard Clerk providers.
+- **Data Fetching:** Prefer React Server Components (RSC) for initial page loads and data retrieval, fetching directly or via backend endpoints.
+- **Components:** Organize UI components modularly. Maintain interactive components as `"use client"`.
+
+---
+
+## 🚀 DevOps & Deployment Rules
+
+- **Docker:** All applications must be packaged using multi-stage Dockerfiles. Next.js must build under `standalone` output mode.
+- **Database Limits:** PostgreSQL connection pool limits must respect the calculated safe capacity formula:
+  $$C_{\text{limit}} \le \frac{M_{\text{connections}} - R_{\text{reserved}}}{W_{\text{processes}}}$$
+
+---
+
+## 🛑 Kırmızı Çizgi Kuralları (Red Line Rules)
+
+1. **İş Mantığı Katmanı:** Spagetti kod yazma. İş mantığını (business logic) NestJS'de kesinlikle Controller katmanına yazma, her zaman Service katmanında uygula.
+2. **Next.js 15 Standartları:** `cookies()`, `headers()`, `params` (dinamik rota parametreleri) gibi Next.js 15 asenkron yapılarını her zaman `await` ile kullan.
+3. **Veri Doğrulama (Validation):** Form verilerini veya API istek parametrelerini doğrulamadan (Next.js/Next Server Actions için Zod, NestJS için ValidationPipe ve class-validator/class-transformer kullanmadan) asla işleme alma.
+4. **Güvenlik Analizi:** Kod yazdıktan veya kodda değişiklik yaptıktan sonra, yanıtın/dokümantasyonun altına mutlaka `<SECURITY_REVIEW>` başlığı açarak OWASP standartlarına göre güvenlik analizi yap.
+

@@ -1,0 +1,104 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  ADMIN
+  OPERATOR
+  ANALYST
+}
+
+enum AnalysisStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+}
+
+enum ReportStatus {
+  GENERATING
+  COMPLETED
+  FAILED
+}
+
+model User {
+  id        String   @id @default(uuid())
+  clerkId   String   @unique
+  email     String   @unique
+  name      String?
+  role      Role     @default(OPERATOR)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  drones    Drone[]
+  reports   Report[]
+
+  @@map("users")
+}
+
+model Drone {
+  id           String   @id @default(uuid())
+  name         String
+  model        String
+  serialNumber String   @unique
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Relations
+  ownerId       String
+  owner         User           @relation(fields: [ownerId], references: [id], onDelete: Restrict)
+  thermalImages ThermalImage[]
+
+  @@map("drones")
+}
+
+model ThermalImage {
+  id         String   @id @default(uuid())
+  imageUrl   String
+  latitude   Float?
+  longitude  Float?
+  capturedAt DateTime @default(now())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  // Relations
+  droneId    String
+  drone      Drone        @relation(fields: [droneId], references: [id], onDelete: Restrict)
+  aiAnalyses AIAnalysis[]
+
+  @@map("thermal_images")
+}
+
+model AIAnalysis {
+  id           String         @id @default(uuid())
+  status       AnalysisStatus @default(PENDING)
+  resultData   Json? // Stores details like bounding boxes, temperatures
+  anomalyCount Int            @default(0)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  // Relations
+  thermalImageId String
+  thermalImage   ThermalImage @relation(fields: [thermalImageId], references: [id], onDelete: Cascade)
+
+  @@map("ai_analyses")
+}
+
+model Report {
+  id        String       @id @default(uuid())
+  title     String
+  pdfUrl    String?
+  status    ReportStatus @default(GENERATING)
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+
+  // Relations
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Restrict)
+
+  @@map("reports")
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@safeaura/typescript-config",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "exports": {
+    "./tsconfig.json": "./tsconfig.json",
+    "./nextjs.json": "./nextjs.json",
+    "./nestjs.json": "./nestjs.json"
+  }
+}

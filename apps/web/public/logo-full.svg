@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" width="500" height="350">
+  <defs>
+    <!-- Left Ring Gradient (Orange-Yellow to Purple/Blue) -->
+    <linearGradient id="leftRingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9d42" />
+      <stop offset="50%" stop-color="#e25c27" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    
+    <!-- Right Ring Gradient (Cyan to Deep Blue) -->
+    <linearGradient id="rightRingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d2ff" />
+      <stop offset="100%" stop-color="#0066ff" />
+    </linearGradient>
+
+    <!-- Center Beacon Base Gradient (Light Blue to Dark Blue) -->
+    <linearGradient id="beaconBaseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+
+    <!-- Beacon Glow (Radial) -->
+    <radialGradient id="beaconGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background for preview context (optional, can be transparent, let's keep it transparent but add group) -->
+  <g id="logo-mark" transform="translate(200, 30)">
+    <!-- Blue Glow behind the beacon -->
+    <circle cx="50" cy="50" r="30" fill="url(#beaconGlow)" />
+
+    <!-- Left Ring Arc -->
+    <path d="M 45 15 A 35 35 0 0 0 45 85" fill="none" stroke="url(#leftRingGrad)" stroke-width="5" stroke-linecap="round" />
+
+    <!-- Right Ring Arc -->
+    <path d="M 55 15 A 35 35 0 0 1 55 85" fill="none" stroke="url(#rightRingGrad)" stroke-width="5" stroke-linecap="round" />
+
+    <!-- Center Beacon Base -->
+    <path d="M 46 45 L 36 78 A 15 15 0 0 0 64 78 L 54 45 Z" fill="url(#beaconBaseGrad)" />
+
+    <!-- Central White Sphere -->
+    <circle cx="50" cy="38" r="8" fill="#ffffff" />
+  </g>
+
+  <!-- Logo Text -->
+  <text x="250" y="210" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="52" fill="#ffffff">
+    SafeAura<tspan fill="#00d2ff"> AI</tspan>
+  </text>
+
+  <!-- Subtle Glowing Line below text -->
+  <path d="M 150 240 L 350 240" stroke="url(#rightRingGrad)" stroke-width="2" opacity="0.8" stroke-linecap="round" />
+
+  <!-- Slogan -->
+  <text x="250" y="275" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="16" letter-spacing="4" fill="#ff9d42">
+    SEE RISK <tspan fill="#00d2ff">BEFORE THEY ESCALATE</tspan>
+  </text>
+</svg>
