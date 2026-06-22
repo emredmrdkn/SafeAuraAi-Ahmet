@@ -89,7 +89,7 @@ export default function LandingPage() {
         </div>
 
         <div className="container mx-auto px-6 relative z-10 w-full">
-          <div className="max-w-3xl md:pr-[42%] lg:pr-0 lg:max-w-2xl xl:max-w-3xl">
+          <div className="max-w-3xl md:pr-[42%] lg:pr-0 lg:max-w-2xl xl:max-w-3xl text-center md:text-left flex flex-col items-center md:items-start">
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.1] mb-6">
               See Risks <br/>
@@ -98,38 +98,38 @@ export default function LandingPage() {
               </span>
             </h1>
             
-            <p className="text-base md:text-lg text-neutral-300 mb-10 max-w-xl leading-relaxed">
+            <p className="text-base md:text-lg text-neutral-300 mb-10 max-w-xl leading-relaxed mx-auto md:mx-0">
               SafeAura AI combines drone technology, thermal imaging and engineering intelligence to deliver accurate insights, reduce risk and protect your projects.
             </p>
 
             {/* Horizontal inline features row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-2">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 w-full">
+              <div className="flex flex-col items-center md:items-start gap-2">
+                <div className="flex items-center justify-center md:justify-start gap-2">
                   <Plane className="h-5 w-5 text-blue-400 shrink-0" />
                   <h4 className="font-bold text-white text-xs md:text-sm">Drone Intelligence</h4>
                 </div>
                 <p className="text-[11px] text-neutral-400 leading-tight">High-resolution mapping & analytics</p>
               </div>
               
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-col items-center md:items-start gap-2">
+                <div className="flex items-center justify-center md:justify-start gap-2">
                   <ThermometerSun className="h-5 w-5 text-orange-400 shrink-0" />
                   <h4 className="font-bold text-white text-xs md:text-sm">Thermal Insights</h4>
                 </div>
                 <p className="text-[11px] text-neutral-400 leading-tight">Detect issues before they grow</p>
               </div>
               
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-col items-center md:items-start gap-2">
+                <div className="flex items-center justify-center md:justify-start gap-2">
                   <Target className="h-5 w-5 text-emerald-400 shrink-0" />
                   <h4 className="font-bold text-white text-xs md:text-sm">Engineering Accuracy</h4>
                 </div>
                 <p className="text-[11px] text-neutral-400 leading-tight">Civil 3D analysis & precise reporting</p>
               </div>
               
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-col items-center md:items-start gap-2">
+                <div className="flex items-center justify-center md:justify-start gap-2">
                   <ShieldCheck className="h-5 w-5 text-purple-400 shrink-0" />
                   <h4 className="font-bold text-white text-xs md:text-sm">Safety First</h4>
                 </div>
@@ -137,7 +137,7 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <div className="flex flex-row items-center gap-4">
+            <div className="flex flex-row items-center justify-center md:justify-start gap-4 w-full">
               <button className="px-8 py-3 text-sm font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-500 transition-all shadow-[0_4px_14px_rgba(37,99,235,0.3)]">
                 Our Services
               </button>
