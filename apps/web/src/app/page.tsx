@@ -63,8 +63,8 @@ export default function LandingPage() {
         {/* Background Image on the right (Desktop only, bounded to prevent blurriness) */}
         <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[48%] xl:w-[42%] hidden lg:block z-0 pointer-events-none">
           <Image 
-            src="/assets/hero-drone.png" 
-            alt="Drone pilot inspecting site" 
+            src="/assets/hero-drone-new.png" 
+            alt="Drone pilot inspecting construction site" 
             fill 
             priority
             sizes="50vw"
@@ -78,8 +78,8 @@ export default function LandingPage() {
         {/* Mobile background overlay */}
         <div className="absolute inset-0 z-0 lg:hidden opacity-20 pointer-events-none">
           <Image 
-            src="/assets/hero-drone.png" 
-            alt="Drone pilot inspecting site" 
+            src="/assets/hero-drone-new.png" 
+            alt="Drone pilot inspecting construction site" 
             fill 
             priority
             sizes="100vw"
