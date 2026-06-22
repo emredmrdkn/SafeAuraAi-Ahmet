@@ -62,8 +62,8 @@ export default function LandingPage() {
         {/* Background Image placed on the right side for desktop, full screen for mobile */}
         <div className="absolute inset-0 z-0 lg:left-1/3 xl:left-1/2">
           <Image 
-            src="/assets/hero-drone.png" 
-            alt="Drone pilot inspecting site" 
+            src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=1200" 
+            alt="Drone flying over site" 
             fill 
             priority
             sizes="(max-width: 1024px) 100vw, 50vw"
