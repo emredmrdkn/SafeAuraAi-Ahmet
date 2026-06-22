@@ -60,14 +60,14 @@ export default function LandingPage() {
       {/* 2. HERO SECTION (Dark Theme, Compact, Right-Aligned Photo) */}
       <section className="relative min-h-[85vh] py-20 lg:py-24 flex items-center justify-start text-white overflow-hidden bg-[#030712]">
         
-        {/* Background Image on the right (Desktop only, bounded to prevent blurriness) */}
-        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[48%] xl:w-[42%] hidden lg:block z-0 pointer-events-none">
+        {/* Background Image on the right (Tablet & Desktop, bounded to prevent blurriness) */}
+        <div className="absolute right-0 top-0 bottom-0 w-full md:w-[46%] lg:w-[48%] xl:w-[42%] hidden md:block z-0 pointer-events-none">
           <Image 
             src="/assets/hero-drone-new.png" 
             alt="Drone pilot inspecting construction site" 
             fill 
             priority
-            sizes="50vw"
+            sizes="(max-width: 1024px) 45vw, 50vw"
             className="object-cover object-left"
           />
           {/* Gradients to blend the image into the background */}
@@ -76,7 +76,7 @@ export default function LandingPage() {
         </div>
 
         {/* Mobile background overlay */}
-        <div className="absolute inset-0 z-0 lg:hidden opacity-20 pointer-events-none">
+        <div className="absolute inset-0 z-0 md:hidden opacity-35 pointer-events-none">
           <Image 
             src="/assets/hero-drone-new.png" 
             alt="Drone pilot inspecting construction site" 
@@ -85,11 +85,11 @@ export default function LandingPage() {
             sizes="100vw"
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-[#030712]/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#030712]/50 via-[#030712]/80 to-[#030712]"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10 w-full">
-          <div className="max-w-3xl lg:max-w-2xl xl:max-w-3xl">
+          <div className="max-w-3xl md:pr-[42%] lg:pr-0 lg:max-w-2xl xl:max-w-3xl">
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.1] mb-6">
               See Risks <br/>
