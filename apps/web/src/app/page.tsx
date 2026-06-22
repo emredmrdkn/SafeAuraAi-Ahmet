@@ -57,87 +57,91 @@ export default function LandingPage() {
         </div>
       </header>
 
-      {/* 2. HERO SECTION (Dark Theme, Full-Width Background Photo on Mobile, Right-Aligned on Desktop) */}
-      <section className="relative min-h-screen pt-32 pb-24 flex items-center justify-start text-white overflow-hidden bg-[#030712]">
-        {/* Background Image placed on the right side for desktop, full screen for mobile */}
-        <div className="absolute inset-0 z-0 lg:left-1/3 xl:left-1/2">
+      {/* 2. HERO SECTION (Dark Theme, Compact, Right-Aligned Photo) */}
+      <section className="relative min-h-[85vh] py-20 lg:py-24 flex items-center justify-start text-white overflow-hidden bg-[#030712]">
+        
+        {/* Background Image on the right (Desktop only, bounded to prevent blurriness) */}
+        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[48%] xl:w-[42%] hidden lg:block z-0 pointer-events-none">
           <Image 
-            src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=1200" 
-            alt="Drone flying over site" 
+            src="/assets/hero-drone.png" 
+            alt="Drone pilot inspecting site" 
             fill 
             priority
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover object-center lg:object-left"
+            sizes="50vw"
+            className="object-cover object-left"
           />
-          {/* Gradients to fade out the image smoothly */}
-          {/* Left-to-right fade for desktop: fades the left side of the image into the solid dark background */}
-          <div className="absolute inset-y-0 left-0 w-full lg:w-1/2 bg-gradient-to-r from-[#030712] via-[#030712]/80 to-transparent z-10 hidden lg:block"></div>
-          {/* Overlays for mobile (spans the entire image) */}
-          <div className="absolute inset-0 bg-[#030712]/85 z-10 lg:hidden"></div>
-          {/* Bottom fade for both */}
-          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#030712] to-transparent z-10"></div>
+          {/* Gradients to blend the image into the background */}
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#030712] to-transparent"></div>
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#030712] to-transparent"></div>
+        </div>
+
+        {/* Mobile background overlay */}
+        <div className="absolute inset-0 z-0 lg:hidden opacity-20 pointer-events-none">
+          <Image 
+            src="/assets/hero-drone.png" 
+            alt="Drone pilot inspecting site" 
+            fill 
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-[#030712]/60"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10 w-full">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl lg:max-w-2xl xl:max-w-3xl">
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.1] mb-4 text-white">
-              SafeAura<span className="text-cyan-400"> AI</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.1] mb-6">
+              See Risks <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+                Before They Escalate
+              </span>
             </h1>
-
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-              See risk before they escalate
-            </h2>
             
-            <p className="text-lg text-neutral-300 mb-10 max-w-xl leading-relaxed">
+            <p className="text-base md:text-lg text-neutral-300 mb-10 max-w-xl leading-relaxed">
               SafeAura AI combines drone technology, thermal imaging and engineering intelligence to deliver accurate insights, reduce risk and protect your projects.
             </p>
 
-            {/* Inline 4 features with subtext */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12 max-w-2xl">
-              <div className="flex gap-3">
-                <div className="flex items-center justify-center h-10 w-10 rounded-xl bg-blue-500/10 border border-blue-500/20 shrink-0">
-                  <Plane className="h-5 w-5 text-blue-400" />
+            {/* Horizontal inline features row */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <Plane className="h-5 w-5 text-blue-400 shrink-0" />
+                  <h4 className="font-bold text-white text-xs md:text-sm">Drone Intelligence</h4>
                 </div>
-                <div>
-                  <h4 className="font-bold text-white text-sm">Drone Intelligence</h4>
-                  <p className="text-xs text-neutral-400">High-resolution mapping & analytics</p>
-                </div>
+                <p className="text-[11px] text-neutral-400 leading-tight">High-resolution mapping & analytics</p>
               </div>
-              <div className="flex gap-3">
-                <div className="flex items-center justify-center h-10 w-10 rounded-xl bg-blue-500/10 border border-blue-500/20 shrink-0">
-                  <ThermometerSun className="h-5 w-5 text-orange-400" />
+              
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <ThermometerSun className="h-5 w-5 text-orange-400 shrink-0" />
+                  <h4 className="font-bold text-white text-xs md:text-sm">Thermal Insights</h4>
                 </div>
-                <div>
-                  <h4 className="font-bold text-white text-sm">Thermal Insights</h4>
-                  <p className="text-xs text-neutral-400">Detect issues before they grow</p>
-                </div>
+                <p className="text-[11px] text-neutral-400 leading-tight">Detect issues before they grow</p>
               </div>
-              <div className="flex gap-3">
-                <div className="flex items-center justify-center h-10 w-10 rounded-xl bg-blue-500/10 border border-blue-500/20 shrink-0">
-                  <Target className="h-5 w-5 text-emerald-400" />
+              
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <Target className="h-5 w-5 text-emerald-400 shrink-0" />
+                  <h4 className="font-bold text-white text-xs md:text-sm">Engineering Accuracy</h4>
                 </div>
-                <div>
-                  <h4 className="font-bold text-white text-sm">Engineering Accuracy</h4>
-                  <p className="text-xs text-neutral-400">Civil 3D analysis & precise reporting</p>
-                </div>
+                <p className="text-[11px] text-neutral-400 leading-tight">Civil 3D analysis & precise reporting</p>
               </div>
-              <div className="flex gap-3">
-                <div className="flex items-center justify-center h-10 w-10 rounded-xl bg-blue-500/10 border border-blue-500/20 shrink-0">
-                  <ShieldCheck className="h-5 w-5 text-purple-400" />
+              
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="h-5 w-5 text-purple-400 shrink-0" />
+                  <h4 className="font-bold text-white text-xs md:text-sm">Safety First</h4>
                 </div>
-                <div>
-                  <h4 className="font-bold text-white text-sm">Safety First</h4>
-                  <p className="text-xs text-neutral-400">WHS focused risk management</p>
-                </div>
+                <p className="text-[11px] text-neutral-400 leading-tight">WHS focused risk management</p>
               </div>
             </div>
 
             <div className="flex flex-row items-center gap-4">
-              <button className="px-8 py-3.5 text-sm font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-500 transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)]">
+              <button className="px-8 py-3 text-sm font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-500 transition-all shadow-[0_4px_14px_rgba(37,99,235,0.3)]">
                 Our Services
               </button>
-              <button className="px-8 py-3.5 text-sm font-semibold text-white bg-transparent border border-white/30 rounded-full hover:bg-white/10 transition-all">
+              <button className="px-8 py-3 text-sm font-semibold text-white bg-transparent border border-white/20 rounded-lg hover:bg-white/10 transition-all">
                 Get a Quote
               </button>
             </div>
