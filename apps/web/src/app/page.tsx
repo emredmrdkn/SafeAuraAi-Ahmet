@@ -17,7 +17,8 @@ import {
   Map,
   Award,
   Cloud,
-  BarChart3
+  BarChart3,
+  Menu
 } from 'lucide-react';
 
 export default function LandingPage() {
@@ -26,6 +27,9 @@ export default function LandingPage() {
       
       {/* 1. HEADER (Dark Theme, Sticky) */}
       <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#030712]/90 backdrop-blur-md transition-all duration-300">
+        {/* Hidden Checkbox for pure-CSS menu toggle */}
+        <input type="checkbox" id="mobile-menu-toggle" className="peer hidden" />
+
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="relative h-10 w-10">
@@ -40,7 +44,9 @@ export default function LandingPage() {
               </span>
             </div>
           </div>
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-300">
+
+          {/* Desktop Navigation Links (Visible on lg and up) */}
+          <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-neutral-300">
             <a href="#services" className="hover:text-white transition-colors">Home</a>
             <a href="#services" className="hover:text-white transition-colors">Services</a>
             <a href="#services" className="hover:text-white transition-colors">Industries</a>
@@ -48,8 +54,33 @@ export default function LandingPage() {
             <a href="#services" className="hover:text-white transition-colors">Case Studies</a>
             <a href="#services" className="hover:text-white transition-colors">Contact</a>
           </nav>
+
           <div className="flex items-center gap-4">
-            <button className="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-blue-600 rounded-full hover:bg-blue-500 transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+            {/* Desktop Get a Quote Button (Visible on lg and up) */}
+            <button className="hidden lg:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-blue-600 rounded-full hover:bg-blue-500 transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+              Get a Quote
+            </button>
+
+            {/* Hamburger Button for Mobile/Tablet (Visible below lg) */}
+            <label 
+              htmlFor="mobile-menu-toggle" 
+              className="lg:hidden p-2 text-neutral-300 hover:text-white cursor-pointer select-none"
+            >
+              <Menu className="h-6 w-6" />
+            </label>
+          </div>
+        </div>
+
+        {/* Mobile/Tablet Menu Drawer (Visible below lg when peer checkbox is checked) */}
+        <div className="absolute top-20 left-0 right-0 bg-[#030712]/95 backdrop-blur-md border-b border-white/10 px-6 py-6 flex flex-col gap-4 transition-all duration-300 origin-top scale-y-0 opacity-0 pointer-events-none peer-checked:scale-y-100 peer-checked:opacity-100 peer-checked:pointer-events-auto lg:hidden">
+          <a href="#services" className="text-neutral-300 hover:text-white py-2.5 text-base border-b border-white/5">Home</a>
+          <a href="#services" className="text-neutral-300 hover:text-white py-2.5 text-base border-b border-white/5">Services</a>
+          <a href="#services" className="text-neutral-300 hover:text-white py-2.5 text-base border-b border-white/5">Industries</a>
+          <a href="#services" className="text-neutral-300 hover:text-white py-2.5 text-base border-b border-white/5">About Us</a>
+          <a href="#services" className="text-neutral-300 hover:text-white py-2.5 text-base border-b border-white/5">Case Studies</a>
+          <a href="#services" className="text-neutral-300 hover:text-white py-2.5 text-base border-b border-white/5">Contact</a>
+          <div className="pt-4">
+            <button className="w-full flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-500 transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)]">
               Get a Quote
             </button>
           </div>
