@@ -95,7 +95,7 @@ export default function LandingPage() {
       </header>
 
       {/* 2. HERO SECTION (Dark Theme, Compact, Right-Aligned Photo) */}
-      <section className="relative min-h-[85vh] py-20 lg:py-24 flex items-center justify-center md:justify-start text-white overflow-hidden bg-[#030712]">
+      <section className="relative min-h-[70vh] pt-28 pb-16 lg:pt-32 lg:pb-20 flex items-center justify-center md:justify-start text-white overflow-hidden bg-[#030712]">
         
         {/* Full-screen Background Image with gradients for readability */}
         <div className="absolute inset-0 z-0 pointer-events-none">
@@ -115,19 +115,19 @@ export default function LandingPage() {
         <div className="container mx-auto px-6 relative z-10 w-full">
           <div className="max-w-3xl w-full md:pr-[42%] lg:pr-0 lg:max-w-2xl xl:max-w-3xl text-center md:text-left flex flex-col items-center md:items-start">
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.1] mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.1] mb-4">
               See Risks <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
                 Before They Escalate
               </span>
             </h1>
             
-            <p className="text-base md:text-lg text-neutral-300 mb-10 max-w-xl leading-relaxed mx-auto md:mx-0">
+            <p className="text-base md:text-lg text-neutral-300 mb-6 max-w-xl leading-relaxed mx-auto md:mx-0">
               SafeAura AI combines drone technology, thermal imaging and engineering intelligence to deliver accurate insights, reduce risk and protect your projects.
             </p>
 
             {/* Horizontal inline features row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 w-full max-w-sm md:max-w-none mx-auto md:mx-0">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6 w-full max-w-sm md:max-w-none mx-auto md:mx-0">
               <div className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center justify-center md:justify-start gap-2">
                   <Plane className="h-5 w-5 text-blue-400 shrink-0" />
