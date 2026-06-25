@@ -95,7 +95,7 @@ export default function LandingPage() {
       </header>
 
       {/* 2. HERO SECTION (Dark Theme, Compact, Right-Aligned Photo) */}
-      <section className="relative min-h-[70vh] pt-28 pb-16 lg:pt-32 lg:pb-20 flex items-center justify-center md:justify-start text-white overflow-hidden bg-[#030712]">
+      <section className="relative min-h-[85vh] pt-28 pb-16 lg:pt-32 lg:pb-20 flex items-center justify-center md:justify-start text-white overflow-hidden bg-[#030712]">
         
         {/* Full-screen Background Image with gradients for readability */}
         <div className="absolute inset-0 z-0 pointer-events-none">
@@ -104,8 +104,9 @@ export default function LandingPage() {
             alt="Drone pilot inspecting construction site" 
             fill 
             priority
+            quality={95}
             sizes="100vw"
-            className="object-cover object-[75%_center] md:object-right"
+            className="object-cover object-[75%_38%] md:object-[right_38%]"
           />
           {/* Dark overlay gradients to ensure content readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/85 md:via-[#030712]/50 to-transparent"></div>
