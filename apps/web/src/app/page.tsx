@@ -57,12 +57,12 @@ export default function LandingPage() {
           </nav>
 
           <div className="flex items-center gap-4">
-            {/* Desktop Quote Button (Visible on lg and up) */}
+            {/* Desktop Get a Quote Button (Visible on lg and up) */}
             <a 
               href="tel:+61421781826"
               className="hidden lg:inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-white bg-orange-500 rounded-full hover:bg-orange-400 transition-all shadow-[0_0_15px_rgba(249,115,22,0.3)]"
             >
-              Quote
+              Get a Quote
             </a>
 
             {/* Hamburger Button for Mobile/Tablet (Visible below lg) */}
@@ -88,7 +88,7 @@ export default function LandingPage() {
               href="tel:+61421781826"
               className="w-full flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-orange-500 rounded-full hover:bg-orange-400 transition-all shadow-[0_0_15px_rgba(249,115,22,0.3)]"
             >
-              Quote
+              Get a Quote
             </a>
           </div>
         </div>
@@ -169,7 +169,7 @@ export default function LandingPage() {
                 href="tel:+61421781826"
                 className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold text-white bg-transparent border border-white/20 rounded-lg hover:bg-white/10 transition-all"
               >
-                Quote
+                Get a Quote
               </a>
             </div>
           </div>
@@ -187,216 +187,296 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 lg:gap-6 mt-16">
+          <div className="flex flex-wrap justify-center gap-x-8 lg:gap-x-6 gap-y-10 lg:gap-y-12 mt-12">
             
             {/* Solar Card */}
-            <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(20%-20px)] min-w-[280px] max-w-[360px] relative bg-white rounded-3xl border border-neutral-200 shadow-[0_8px_30px_rgb(0,0,0,0.02)] p-6 pt-10 flex flex-col hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300">
-              <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-amber-500 flex items-center justify-center text-white shadow-md border-4 border-white z-20">
-                <Sun className="h-6 w-6" />
-              </div>
-              <div className="aspect-[16/10] w-full relative bg-neutral-100 rounded-2xl overflow-hidden mb-6">
+            <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(20%-20px)] min-w-[280px] max-w-[360px] relative bg-white rounded-[24px] border border-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.02)] overflow-hidden flex flex-col hover:shadow-[0_16px_40px_rgba(8,112,184,0.06)] hover:-translate-y-1 transition-all duration-300">
+              <div className="aspect-[16/10] w-full relative bg-neutral-50 overflow-hidden">
                 <Image 
                   src="/assets/solar_asset_inspect.jpg" 
                   alt="Solar Asset Intelligence - Drone thermal inspection of solar panels" 
                   fill 
-                  sizes="(max-width: 768px) 100vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, 20vw"
                   className="object-cover" 
                 />
+                <div className="absolute top-4 left-4 w-11 h-11 rounded-2xl bg-white/95 backdrop-blur-md flex items-center justify-center shadow-md border border-white/20 z-10">
+                  <Sun className="h-5.5 w-5.5 text-amber-500" />
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-neutral-900 mb-4 tracking-tight">Solar Asset Intelligence</h3>
-              <ul className="space-y-2.5 mb-6 flex-1">
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Thermal anomaly detection
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Hotspot identification
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Performance issue investigation
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Bird nesting assessment
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Maintenance recommendations
-                </li>
-              </ul>
-              <a href="#" className="inline-flex items-center gap-1.5 text-amber-500 font-bold hover:text-amber-600 transition-colors text-sm mt-auto">
-                Learn more <ArrowRight className="h-4 w-4" />
-              </a>
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="text-lg font-bold text-neutral-900 mb-4 tracking-tight">Solar Asset Intelligence</h3>
+                <ul className="space-y-3 mb-6 flex-1">
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Thermal anomaly detection</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Hotspot identification</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Performance issue investigation</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Bird nesting assessment</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Maintenance recommendations</span>
+                  </li>
+                </ul>
+                <a 
+                  href="tel:+61421781826"
+                  className="group/btn inline-flex items-center justify-center gap-1.5 w-full py-2.5 px-4 text-xs font-semibold text-blue-600 bg-blue-50/50 hover:bg-blue-600 hover:text-white rounded-xl transition-all duration-200 border border-blue-100/50 mt-auto"
+                >
+                  Get a Quote
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-1" />
+                </a>
+              </div>
             </div>
 
             {/* Earthworks Card */}
-            <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(20%-20px)] min-w-[280px] max-w-[360px] relative bg-white rounded-3xl border border-neutral-200 shadow-[0_8px_30px_rgb(0,0,0,0.02)] p-6 pt-10 flex flex-col hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300">
-              <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-emerald-600 flex items-center justify-center text-white shadow-md border-4 border-white z-20">
-                <Mountain className="h-6 w-6" />
-              </div>
-              <div className="aspect-[16/10] w-full relative bg-neutral-100 rounded-2xl overflow-hidden mb-6">
+            <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(20%-20px)] min-w-[280px] max-w-[360px] relative bg-white rounded-[24px] border border-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.02)] overflow-hidden flex flex-col hover:shadow-[0_16px_40px_rgba(8,112,184,0.06)] hover:-translate-y-1 transition-all duration-300">
+              <div className="aspect-[16/10] w-full relative bg-neutral-50 overflow-hidden">
                 <Image 
                   src="/assets/earthworks_analytics.jpg" 
                   alt="Earthworks & Stockpile Analytics - Volume measurements and site mapping" 
                   fill 
-                  sizes="(max-width: 768px) 100vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, 20vw"
                   className="object-cover" 
                 />
+                <div className="absolute top-4 left-4 w-11 h-11 rounded-2xl bg-white/95 backdrop-blur-md flex items-center justify-center shadow-md border border-white/20 z-10">
+                  <Mountain className="h-5.5 w-5.5 text-emerald-600" />
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-neutral-900 mb-4 tracking-tight">Earthworks & Stockpile Analytics</h3>
-              <ul className="space-y-2.5 mb-6 flex-1">
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Cut & Fill calculations
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Stockpile volume measurement
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Progress quantity verification
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Contractor claim validation
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Survey-grade reporting
-                </li>
-              </ul>
-              <a href="#" className="inline-flex items-center gap-1.5 text-amber-500 font-bold hover:text-amber-600 transition-colors text-sm mt-auto">
-                Learn more <ArrowRight className="h-4 w-4" />
-              </a>
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="text-lg font-bold text-neutral-900 mb-4 tracking-tight">Earthworks & Stockpile Analytics</h3>
+                <ul className="space-y-3 mb-6 flex-1">
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Cut & Fill calculations</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Stockpile volume measurement</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Progress verification</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Contractor claim validation</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Survey-grade reporting</span>
+                  </li>
+                </ul>
+                <a 
+                  href="tel:+61421781826"
+                  className="group/btn inline-flex items-center justify-center gap-1.5 w-full py-2.5 px-4 text-xs font-semibold text-blue-600 bg-blue-50/50 hover:bg-blue-600 hover:text-white rounded-xl transition-all duration-200 border border-blue-100/50 mt-auto"
+                >
+                  Get a Quote
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-1" />
+                </a>
+              </div>
             </div>
 
             {/* Construction Card */}
-            <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(20%-20px)] min-w-[280px] max-w-[360px] relative bg-white rounded-3xl border border-neutral-200 shadow-[0_8px_30px_rgb(0,0,0,0.02)] p-6 pt-10 flex flex-col hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300">
-              <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-md border-4 border-white z-20">
-                <Building2 className="h-6 w-6" />
-              </div>
-              <div className="aspect-[16/10] w-full relative bg-neutral-100 rounded-2xl overflow-hidden mb-6">
+            <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(20%-20px)] min-w-[280px] max-w-[360px] relative bg-white rounded-[24px] border border-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.02)] overflow-hidden flex flex-col hover:shadow-[0_16px_40px_rgba(8,112,184,0.06)] hover:-translate-y-1 transition-all duration-300">
+              <div className="aspect-[16/10] w-full relative bg-neutral-50 overflow-hidden">
                 <Image 
                   src="/assets/construction_monitor.jpg" 
                   alt="Construction Progress Monitoring - Drone aerial survey with progress overlay" 
                   fill 
-                  sizes="(max-width: 768px) 100vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, 20vw"
                   className="object-cover" 
                 />
+                <div className="absolute top-4 left-4 w-11 h-11 rounded-2xl bg-white/95 backdrop-blur-md flex items-center justify-center shadow-md border border-white/20 z-10">
+                  <Building2 className="h-5.5 w-5.5 text-blue-600" />
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-neutral-900 mb-4 tracking-tight">Construction Progress Monitoring</h3>
-              <ul className="space-y-2.5 mb-6 flex-1">
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Weekly drone surveys
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Orthomosaic & 3D mapping
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Progress tracking
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  As-built validation
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Time-lapse visualisation
-                </li>
-              </ul>
-              <a href="#" className="inline-flex items-center gap-1.5 text-amber-500 font-bold hover:text-amber-600 transition-colors text-sm mt-auto">
-                Learn more <ArrowRight className="h-4 w-4" />
-              </a>
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="text-lg font-bold text-neutral-900 mb-4 tracking-tight">Construction Progress Monitoring</h3>
+                <ul className="space-y-3 mb-6 flex-1">
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Weekly drone surveys</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Orthomosaic & 3D mapping</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Progress tracking</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>As-built validation</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Time-lapse visualisation</span>
+                  </li>
+                </ul>
+                <a 
+                  href="tel:+61421781826"
+                  className="group/btn inline-flex items-center justify-center gap-1.5 w-full py-2.5 px-4 text-xs font-semibold text-blue-600 bg-blue-50/50 hover:bg-blue-600 hover:text-white rounded-xl transition-all duration-200 border border-blue-100/50 mt-auto"
+                >
+                  Get a Quote
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-1" />
+                </a>
+              </div>
             </div>
 
             {/* Safety Card */}
-            <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(20%-20px)] min-w-[280px] max-w-[360px] relative bg-white rounded-3xl border border-neutral-200 shadow-[0_8px_30px_rgb(0,0,0,0.02)] p-6 pt-10 flex flex-col hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300">
-              <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-purple-600 flex items-center justify-center text-white shadow-md border-4 border-white z-20">
-                <HardHat className="h-6 w-6" />
-              </div>
-              <div className="aspect-[16/10] w-full relative bg-neutral-100 rounded-2xl overflow-hidden mb-6">
+            <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(20%-20px)] min-w-[280px] max-w-[360px] relative bg-white rounded-[24px] border border-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.02)] overflow-hidden flex flex-col hover:shadow-[0_16px_40px_rgba(8,112,184,0.06)] hover:-translate-y-1 transition-all duration-300">
+              <div className="aspect-[16/10] w-full relative bg-neutral-50 overflow-hidden">
                 <Image 
                   src="/assets/safety_compliance.jpg" 
                   alt="Safety & Compliance Intelligence - Hazard identification and risk assessment" 
                   fill 
-                  sizes="(max-width: 768px) 100vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, 20vw"
                   className="object-cover" 
                 />
+                <div className="absolute top-4 left-4 w-11 h-11 rounded-2xl bg-white/95 backdrop-blur-md flex items-center justify-center shadow-md border border-white/20 z-10">
+                  <HardHat className="h-5.5 w-5.5 text-purple-600" />
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-neutral-900 mb-4 tracking-tight">Safety & Compliance Intelligence</h3>
-              <ul className="space-y-2.5 mb-6 flex-1">
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Site safety inspections
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Hazard identification
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Risk assessments
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Compliance observations
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Corrective action tracking
-                </li>
-              </ul>
-              <a href="#" className="inline-flex items-center gap-1.5 text-amber-500 font-bold hover:text-amber-600 transition-colors text-sm mt-auto">
-                Learn more <ArrowRight className="h-4 w-4" />
-              </a>
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="text-lg font-bold text-neutral-900 mb-4 tracking-tight">Safety & Compliance Intelligence</h3>
+                <ul className="space-y-3 mb-6 flex-1">
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Site safety inspections</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Hazard identification</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Risk assessments</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Compliance observations</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Corrective action tracking</span>
+                  </li>
+                </ul>
+                <a 
+                  href="tel:+61421781826"
+                  className="group/btn inline-flex items-center justify-center gap-1.5 w-full py-2.5 px-4 text-xs font-semibold text-blue-600 bg-blue-50/50 hover:bg-blue-600 hover:text-white rounded-xl transition-all duration-200 border border-blue-100/50 mt-auto"
+                >
+                  Get a Quote
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-1" />
+                </a>
+              </div>
             </div>
 
             {/* Building Diagnostics Card */}
-            <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(20%-20px)] min-w-[280px] max-w-[360px] relative bg-white rounded-3xl border border-neutral-200 shadow-[0_8px_30px_rgb(0,0,0,0.02)] p-6 pt-10 flex flex-col hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300">
-              <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-cyan-600 flex items-center justify-center text-white shadow-md border-4 border-white z-20">
-                <ThermometerSun className="h-6 w-6" />
-              </div>
-              <div className="aspect-[16/10] w-full relative bg-neutral-100 rounded-2xl overflow-hidden mb-6">
+            <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(20%-20px)] min-w-[280px] max-w-[360px] relative bg-white rounded-[24px] border border-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.02)] overflow-hidden flex flex-col hover:shadow-[0_16px_40px_rgba(8,112,184,0.06)] hover:-translate-y-1 transition-all duration-300">
+              <div className="aspect-[16/10] w-full relative bg-neutral-50 overflow-hidden">
                 <Image 
                   src="/assets/building_diagnostics.jpg" 
                   alt="Building Diagnostics - Drone thermal diagnostic inspection" 
                   fill 
-                  sizes="(max-width: 768px) 100vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, 20vw"
                   className="object-cover" 
                 />
+                <div className="absolute top-4 left-4 w-11 h-11 rounded-2xl bg-white/95 backdrop-blur-md flex items-center justify-center shadow-md border border-white/20 z-10">
+                  <ThermometerSun className="h-5.5 w-5.5 text-cyan-600" />
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-neutral-900 mb-4 tracking-tight">Building Diagnostics</h3>
-              <ul className="space-y-2.5 mb-6 flex-1">
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Moisture ingress detection
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Water damage assessment
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Thermal insulation audits
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Moisture level mapping
-                </li>
-                <li className="flex items-start gap-2 text-sm text-neutral-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
-                  Defect reporting & advice
-                </li>
-              </ul>
-              <a href="#" className="inline-flex items-center gap-1.5 text-amber-500 font-bold hover:text-amber-600 transition-colors text-sm mt-auto">
-                Learn more <ArrowRight className="h-4 w-4" />
-              </a>
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="text-lg font-bold text-neutral-900 mb-4 tracking-tight">Building Diagnostics</h3>
+                <ul className="space-y-3 mb-6 flex-1">
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Moisture ingress detection</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Water damage assessment</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Thermal insulation audits</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Moisture level mapping</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-xs md:text-sm text-neutral-600">
+                    <svg className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Defect reporting & advice</span>
+                  </li>
+                </ul>
+                <a 
+                  href="tel:+61421781826"
+                  className="group/btn inline-flex items-center justify-center gap-1.5 w-full py-2.5 px-4 text-xs font-semibold text-blue-600 bg-blue-50/50 hover:bg-blue-600 hover:text-white rounded-xl transition-all duration-200 border border-blue-100/50 mt-auto"
+                >
+                  Get a Quote
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-1" />
+                </a>
+              </div>
             </div>
 
           </div>
@@ -597,7 +677,7 @@ export default function LandingPage() {
                 href="tel:+61421781826"
                 className="w-full md:w-auto inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-white bg-orange-500 rounded-full hover:bg-orange-400 transition-all shadow-[0_0_15px_rgba(249,115,22,0.3)]"
               >
-                Quote
+                Get a Quote
               </a>
             </div>
           </div>
