@@ -561,7 +561,7 @@ export default function LandingPage() {
           </div>
           
           <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
-            <p>© 2024 SafeAura AI. All rights reserved.</p>
+            <p>© 2026 SafeAura AI. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-neutral-400 transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-neutral-400 transition-colors">Terms & Conditions</a>
