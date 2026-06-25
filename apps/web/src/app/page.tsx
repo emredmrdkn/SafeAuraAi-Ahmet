@@ -187,10 +187,10 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 mt-16">
+          <div className="flex flex-wrap justify-center gap-8 lg:gap-6 mt-16">
             
             {/* Solar Card */}
-            <div className="relative bg-white rounded-3xl border border-neutral-200 shadow-[0_8px_30px_rgb(0,0,0,0.02)] p-6 pt-10 flex flex-col hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300">
+            <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(20%-20px)] min-w-[280px] max-w-[360px] relative bg-white rounded-3xl border border-neutral-200 shadow-[0_8px_30px_rgb(0,0,0,0.02)] p-6 pt-10 flex flex-col hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300">
               <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-amber-500 flex items-center justify-center text-white shadow-md border-4 border-white z-20">
                 <Sun className="h-6 w-6" />
               </div>
@@ -232,7 +232,7 @@ export default function LandingPage() {
             </div>
 
             {/* Earthworks Card */}
-            <div className="relative bg-white rounded-3xl border border-neutral-200 shadow-[0_8px_30px_rgb(0,0,0,0.02)] p-6 pt-10 flex flex-col hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300">
+            <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(20%-20px)] min-w-[280px] max-w-[360px] relative bg-white rounded-3xl border border-neutral-200 shadow-[0_8px_30px_rgb(0,0,0,0.02)] p-6 pt-10 flex flex-col hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300">
               <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-emerald-600 flex items-center justify-center text-white shadow-md border-4 border-white z-20">
                 <Mountain className="h-6 w-6" />
               </div>
@@ -274,7 +274,7 @@ export default function LandingPage() {
             </div>
 
             {/* Construction Card */}
-            <div className="relative bg-white rounded-3xl border border-neutral-200 shadow-[0_8px_30px_rgb(0,0,0,0.02)] p-6 pt-10 flex flex-col hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300">
+            <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(20%-20px)] min-w-[280px] max-w-[360px] relative bg-white rounded-3xl border border-neutral-200 shadow-[0_8px_30px_rgb(0,0,0,0.02)] p-6 pt-10 flex flex-col hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300">
               <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-md border-4 border-white z-20">
                 <Building2 className="h-6 w-6" />
               </div>
@@ -316,7 +316,7 @@ export default function LandingPage() {
             </div>
 
             {/* Safety Card */}
-            <div className="relative bg-white rounded-3xl border border-neutral-200 shadow-[0_8px_30px_rgb(0,0,0,0.02)] p-6 pt-10 flex flex-col hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300">
+            <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(20%-20px)] min-w-[280px] max-w-[360px] relative bg-white rounded-3xl border border-neutral-200 shadow-[0_8px_30px_rgb(0,0,0,0.02)] p-6 pt-10 flex flex-col hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300">
               <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-purple-600 flex items-center justify-center text-white shadow-md border-4 border-white z-20">
                 <HardHat className="h-6 w-6" />
               </div>
@@ -350,6 +350,48 @@ export default function LandingPage() {
                 <li className="flex items-start gap-2 text-sm text-neutral-600">
                   <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Corrective action tracking
+                </li>
+              </ul>
+              <a href="#" className="inline-flex items-center gap-1.5 text-amber-500 font-bold hover:text-amber-600 transition-colors text-sm mt-auto">
+                Learn more <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+
+            {/* Building Diagnostics Card */}
+            <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(20%-20px)] min-w-[280px] max-w-[360px] relative bg-white rounded-3xl border border-neutral-200 shadow-[0_8px_30px_rgb(0,0,0,0.02)] p-6 pt-10 flex flex-col hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300">
+              <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-cyan-600 flex items-center justify-center text-white shadow-md border-4 border-white z-20">
+                <ThermometerSun className="h-6 w-6" />
+              </div>
+              <div className="aspect-[16/10] w-full relative bg-neutral-100 rounded-2xl overflow-hidden mb-6">
+                <Image 
+                  src="/assets/building_diagnostics.jpg" 
+                  alt="Building Diagnostics - Drone thermal diagnostic inspection" 
+                  fill 
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  className="object-cover" 
+                />
+              </div>
+              <h3 className="text-xl font-bold text-neutral-900 mb-4 tracking-tight">Building Diagnostics</h3>
+              <ul className="space-y-2.5 mb-6 flex-1">
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
+                  Moisture ingress detection
+                </li>
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
+                  Water damage assessment
+                </li>
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
+                  Thermal insulation audits
+                </li>
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
+                  Moisture level mapping
+                </li>
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
+                  Defect reporting & advice
                 </li>
               </ul>
               <a href="#" className="inline-flex items-center gap-1.5 text-amber-500 font-bold hover:text-amber-600 transition-colors text-sm mt-auto">
