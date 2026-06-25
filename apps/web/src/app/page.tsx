@@ -18,7 +18,8 @@ import {
   Award,
   Cloud,
   BarChart3,
-  Menu
+  Menu,
+  ChevronDown
 } from 'lucide-react';
 
 export default function LandingPage() {
@@ -47,17 +48,17 @@ export default function LandingPage() {
 
           {/* Desktop Navigation Links (Visible on lg and up) */}
           <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-neutral-300">
-            <a href="#services" className="hover:text-white transition-colors">Home</a>
-            <a href="#services" className="hover:text-white transition-colors">Services</a>
-            <a href="#services" className="hover:text-white transition-colors">Industries</a>
-            <a href="#services" className="hover:text-white transition-colors">About Us</a>
-            <a href="#services" className="hover:text-white transition-colors">Case Studies</a>
-            <a href="#services" className="hover:text-white transition-colors">Contact</a>
+            <a href="#" className="text-blue-400 font-semibold">Home</a>
+            <a href="#services" className="hover:text-white transition-colors inline-flex items-center gap-1">Services <ChevronDown className="h-3.5 w-3.5" /></a>
+            <a href="#industries" className="hover:text-white transition-colors">Industries</a>
+            <a href="#about" className="hover:text-white transition-colors">About Us</a>
+            <a href="#case-studies" className="hover:text-white transition-colors">Case Studies</a>
+            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
           </nav>
 
           <div className="flex items-center gap-4">
             {/* Desktop Get a Quote Button (Visible on lg and up) */}
-            <button className="hidden lg:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-blue-600 rounded-full hover:bg-blue-500 transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+            <button className="hidden lg:inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-white bg-orange-500 rounded-full hover:bg-orange-400 transition-all shadow-[0_0_15px_rgba(249,115,22,0.3)]">
               Get a Quote
             </button>
 
@@ -80,7 +81,7 @@ export default function LandingPage() {
           <a href="#services" className="text-neutral-300 hover:text-white py-2.5 text-base border-b border-white/5">Case Studies</a>
           <a href="#services" className="text-neutral-300 hover:text-white py-2.5 text-base border-b border-white/5">Contact</a>
           <div className="pt-4">
-            <button className="w-full flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-500 transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+            <button className="w-full flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-orange-500 rounded-full hover:bg-orange-400 transition-all shadow-[0_0_15px_rgba(249,115,22,0.3)]">
               Get a Quote
             </button>
           </div>
@@ -88,38 +89,25 @@ export default function LandingPage() {
       </header>
 
       {/* 2. HERO SECTION (Dark Theme, Compact, Right-Aligned Photo) */}
-      <section className="relative min-h-[85vh] py-20 lg:py-24 flex items-center justify-start text-white overflow-hidden bg-[#030712]">
+      <section className="relative min-h-[85vh] py-20 lg:py-24 flex items-center justify-center md:justify-start text-white overflow-hidden bg-[#030712]">
         
-        {/* Background Image on the right (Tablet & Desktop, bounded to prevent blurriness) */}
-        <div className="absolute right-0 top-0 bottom-0 w-full md:w-[46%] lg:w-[48%] xl:w-[42%] hidden md:block z-0 pointer-events-none">
+        {/* Full-screen Background Image with gradients for readability */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
           <Image 
-            src="/assets/hero-drone-new.png" 
-            alt="Drone pilot inspecting construction site" 
-            fill 
-            priority
-            sizes="(max-width: 1024px) 45vw, 50vw"
-            className="object-cover object-left"
-          />
-          {/* Gradients to blend the image into the background */}
-          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#030712] to-transparent"></div>
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#030712] to-transparent"></div>
-        </div>
-
-        {/* Mobile background overlay */}
-        <div className="absolute inset-0 z-0 md:hidden opacity-35 pointer-events-none">
-          <Image 
-            src="/assets/hero-drone-new.png" 
+            src="/assets/hero_drone_new.jpg" 
             alt="Drone pilot inspecting construction site" 
             fill 
             priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-[75%_center] md:object-right"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#030712]/50 via-[#030712]/80 to-[#030712]"></div>
+          {/* Dark overlay gradients to ensure content readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/85 md:via-[#030712]/50 to-transparent"></div>
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#030712] to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10 w-full">
-          <div className="max-w-3xl md:pr-[42%] lg:pr-0 lg:max-w-2xl xl:max-w-3xl text-center md:text-left flex flex-col items-center md:items-start">
+          <div className="max-w-3xl w-full md:pr-[42%] lg:pr-0 lg:max-w-2xl xl:max-w-3xl text-center md:text-left flex flex-col items-center md:items-start">
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.1] mb-6">
               See Risks <br/>
@@ -133,7 +121,7 @@ export default function LandingPage() {
             </p>
 
             {/* Horizontal inline features row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 w-full">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 w-full max-w-sm md:max-w-none mx-auto md:mx-0">
               <div className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center justify-center md:justify-start gap-2">
                   <Plane className="h-5 w-5 text-blue-400 shrink-0" />
@@ -199,33 +187,33 @@ export default function LandingPage() {
               </div>
               <div className="aspect-[16/10] w-full relative bg-neutral-100 rounded-2xl overflow-hidden mb-6">
                 <Image 
-                  src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=600" 
-                  alt="Solar Asset Intelligence" 
+                  src="/assets/solar_asset_inspect.jpg" 
+                  alt="Solar Asset Intelligence - Drone thermal inspection of solar panels" 
                   fill 
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover" 
                 />
               </div>
               <h3 className="text-xl font-bold text-neutral-900 mb-4 tracking-tight">Solar Asset Intelligence</h3>
-              <ul className="space-y-3 mb-6 flex-1">
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+              <ul className="space-y-2.5 mb-6 flex-1">
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Thermal anomaly detection
                 </li>
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Hotspot identification
                 </li>
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Performance issue investigation
                 </li>
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Bird nesting assessment
                 </li>
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Maintenance recommendations
                 </li>
               </ul>
@@ -241,33 +229,33 @@ export default function LandingPage() {
               </div>
               <div className="aspect-[16/10] w-full relative bg-neutral-100 rounded-2xl overflow-hidden mb-6">
                 <Image 
-                  src="https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?q=80&w=600" 
-                  alt="Earthworks & Stockpile Analytics" 
+                  src="/assets/earthworks_analytics.jpg" 
+                  alt="Earthworks & Stockpile Analytics - Volume measurements and site mapping" 
                   fill 
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover" 
                 />
               </div>
               <h3 className="text-xl font-bold text-neutral-900 mb-4 tracking-tight">Earthworks & Stockpile Analytics</h3>
-              <ul className="space-y-3 mb-6 flex-1">
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+              <ul className="space-y-2.5 mb-6 flex-1">
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Cut & Fill calculations
                 </li>
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Stockpile volume measurement
                 </li>
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Progress quantity verification
                 </li>
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Contractor claim validation
                 </li>
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Survey-grade reporting
                 </li>
               </ul>
@@ -283,33 +271,33 @@ export default function LandingPage() {
               </div>
               <div className="aspect-[16/10] w-full relative bg-neutral-100 rounded-2xl overflow-hidden mb-6">
                 <Image 
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600" 
-                  alt="Construction Progress Monitoring" 
+                  src="/assets/construction_monitor.jpg" 
+                  alt="Construction Progress Monitoring - Drone aerial survey with progress overlay" 
                   fill 
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover" 
                 />
               </div>
               <h3 className="text-xl font-bold text-neutral-900 mb-4 tracking-tight">Construction Progress Monitoring</h3>
-              <ul className="space-y-3 mb-6 flex-1">
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+              <ul className="space-y-2.5 mb-6 flex-1">
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Weekly drone surveys
                 </li>
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Orthomosaic & 3D mapping
                 </li>
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Progress tracking
                 </li>
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   As-built validation
                 </li>
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Time-lapse visualisation
                 </li>
               </ul>
@@ -325,33 +313,33 @@ export default function LandingPage() {
               </div>
               <div className="aspect-[16/10] w-full relative bg-neutral-100 rounded-2xl overflow-hidden mb-6">
                 <Image 
-                  src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=600" 
-                  alt="Safety & Compliance Intelligence" 
+                  src="/assets/safety_compliance.jpg" 
+                  alt="Safety & Compliance Intelligence - Hazard identification and risk assessment" 
                   fill 
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover" 
                 />
               </div>
               <h3 className="text-xl font-bold text-neutral-900 mb-4 tracking-tight">Safety & Compliance Intelligence</h3>
-              <ul className="space-y-3 mb-6 flex-1">
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+              <ul className="space-y-2.5 mb-6 flex-1">
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Site safety inspections
                 </li>
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Hazard identification
                 </li>
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Risk assessments
                 </li>
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Compliance observations
                 </li>
-                <li className="flex items-start gap-2.5 text-sm text-neutral-600">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                <li className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0"></span>
                   Corrective action tracking
                 </li>
               </ul>
@@ -367,29 +355,29 @@ export default function LandingPage() {
       {/* 4. STATISTICS STRIP */}
       <section className="bg-[#05142b] text-white">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 items-center justify-center md:divide-x divide-white/10 py-12">
-            <div className="flex items-center justify-center gap-4 py-4 px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-center justify-center md:divide-x divide-white/10 py-12">
+            <div className="flex items-center justify-center gap-4 py-5 px-6">
               <Plane className="h-10 w-10 text-cyan-400 shrink-0" />
               <div className="text-left">
                 <div className="text-3xl font-bold text-white">150+</div>
                 <div className="text-neutral-400 text-xs tracking-wide uppercase font-semibold">Projects Completed</div>
               </div>
             </div>
-            <div className="flex items-center justify-center gap-4 py-4 px-6">
+            <div className="flex items-center justify-center gap-4 py-5 px-6">
               <Map className="h-10 w-10 text-cyan-400 shrink-0" />
               <div className="text-left">
                 <div className="text-3xl font-bold text-white">10M+ m²</div>
                 <div className="text-neutral-400 text-xs tracking-wide uppercase font-semibold">Area Mapped</div>
               </div>
             </div>
-            <div className="flex items-center justify-center gap-4 py-4 px-6">
+            <div className="flex items-center justify-center gap-4 py-5 px-6">
               <Award className="h-10 w-10 text-cyan-400 shrink-0" />
               <div className="text-left">
                 <div className="text-3xl font-bold text-white">98%</div>
                 <div className="text-neutral-400 text-xs tracking-wide uppercase font-semibold">Client Satisfaction</div>
               </div>
             </div>
-            <div className="flex items-center justify-center gap-4 py-4 px-6">
+            <div className="flex items-center justify-center gap-4 py-5 px-6">
               <ShieldCheck className="h-10 w-10 text-cyan-400 shrink-0" />
               <div className="text-left">
                 <div className="text-3xl font-bold text-white">0</div>
@@ -407,7 +395,7 @@ export default function LandingPage() {
             <h2 className="text-4xl font-bold tracking-tight text-neutral-900 mb-4">How It Works</h2>
           </div>
           
-          <div className="flex flex-col md:flex-row items-stretch justify-between gap-8 relative max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row items-stretch justify-between gap-4 relative max-w-6xl mx-auto">
             {/* Step 1 */}
             <div className="flex-1 flex flex-col items-center text-center p-6 bg-neutral-50 rounded-2xl relative">
               <div className="absolute -top-5 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center text-lg font-bold shadow-md border-4 border-white">
@@ -418,6 +406,11 @@ export default function LandingPage() {
               </div>
               <h3 className="text-xl font-bold text-neutral-900 mb-2">We Capture</h3>
               <p className="text-sm text-neutral-500 leading-relaxed">High-quality drone, thermal and site data.</p>
+            </div>
+
+            {/* Arrow 1→2 */}
+            <div className="hidden md:flex items-center justify-center shrink-0 text-neutral-300">
+              <ArrowRight className="h-6 w-6" />
             </div>
 
             {/* Step 2 */}
@@ -432,6 +425,11 @@ export default function LandingPage() {
               <p className="text-sm text-neutral-500 leading-relaxed">Advanced AI & engineering analysis for accurate results.</p>
             </div>
 
+            {/* Arrow 2→3 */}
+            <div className="hidden md:flex items-center justify-center shrink-0 text-neutral-300">
+              <ArrowRight className="h-6 w-6" />
+            </div>
+
             {/* Step 3 */}
             <div className="flex-1 flex flex-col items-center text-center p-6 bg-neutral-50 rounded-2xl relative">
               <div className="absolute -top-5 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center text-lg font-bold shadow-md border-4 border-white">
@@ -442,6 +440,11 @@ export default function LandingPage() {
               </div>
               <h3 className="text-xl font-bold text-neutral-900 mb-2">We Deliver</h3>
               <p className="text-sm text-neutral-500 leading-relaxed">Clear reports, dashboards and actionable insights.</p>
+            </div>
+
+            {/* Arrow 3→4 */}
+            <div className="hidden md:flex items-center justify-center shrink-0 text-neutral-300">
+              <ArrowRight className="h-6 w-6" />
             </div>
 
             {/* Step 4 */}
@@ -462,10 +465,10 @@ export default function LandingPage() {
       {/* 6. FOOTER (Dark Theme) */}
       <footer className="bg-[#030712] text-white pt-20 pb-10 border-t border-white/5">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-center md:text-left">
             {/* Left */}
-            <div className="lg:pr-4">
-              <div className="flex items-center gap-3 mb-6">
+            <div className="lg:pr-4 flex flex-col items-center md:items-start">
+              <div className="flex items-center gap-3 mb-6 justify-center md:justify-start">
                 <div className="relative h-10 w-10">
                   <Image src="/logo.svg" alt="SafeAura AI Logo" fill className="object-contain" />
                 </div>
@@ -481,10 +484,25 @@ export default function LandingPage() {
               <p className="text-neutral-400 text-sm mb-6 leading-relaxed">
                 We help construction, infrastructure and asset owners see the unseen, understand the risk and take action with confidence.
               </p>
+              {/* Social Media Icons */}
+              <div className="flex items-center gap-3">
+                <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-neutral-300 hover:bg-blue-600 hover:text-white transition-all">
+                  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-neutral-300 hover:bg-pink-500 hover:text-white transition-all">
+                  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
+                <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-neutral-300 hover:bg-blue-500 hover:text-white transition-all">
+                  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-neutral-300 hover:bg-emerald-500 hover:text-white transition-all">
+                  <Phone className="h-4 w-4" />
+                </a>
+              </div>
             </div>
 
             {/* Center-Left */}
-            <div>
+            <div className="flex flex-col items-center md:items-start">
               <h4 className="text-white font-bold mb-6">Services</h4>
               <ul className="space-y-3 text-sm text-neutral-400">
                 <li><a href="#" className="hover:text-blue-400 transition-colors">Solar Asset Intelligence</a></li>
@@ -496,7 +514,7 @@ export default function LandingPage() {
             </div>
 
             {/* Center-Right */}
-            <div>
+            <div className="flex flex-col items-center md:items-start">
               <h4 className="text-white font-bold mb-6">Industries</h4>
               <ul className="space-y-3 text-sm text-neutral-400">
                 <li><a href="#" className="hover:text-blue-400 transition-colors">Construction</a></li>
@@ -508,23 +526,23 @@ export default function LandingPage() {
             </div>
 
             {/* Right */}
-            <div>
+            <div className="flex flex-col items-center md:items-start">
               <h4 className="text-white font-bold mb-6">Get in Touch</h4>
               <ul className="space-y-4 text-sm text-neutral-400 mb-6">
-                <li className="flex items-center gap-3">
+                <li className="flex items-center justify-center md:justify-start gap-3">
                   <Phone className="h-4 w-4 text-neutral-500" />
                   +61 4XX XXX XXX
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-center justify-center md:justify-start gap-3">
                   <Mail className="h-4 w-4 text-neutral-500" />
                   info@safeauraai.com.au
                 </li>
-                <li className="flex items-start gap-3">
+                <li className="flex items-start justify-center md:justify-start gap-3">
                   <MapPin className="h-4 w-4 text-neutral-500 shrink-0 mt-0.5" />
                   Sydney, NSW, Australia
                 </li>
               </ul>
-              <button className="px-6 py-2 text-sm font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-500 transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+              <button className="w-full md:w-auto px-6 py-2.5 text-sm font-semibold text-white bg-orange-500 rounded-full hover:bg-orange-400 transition-all shadow-[0_0_15px_rgba(249,115,22,0.3)]">
                 Get a Quote
               </button>
             </div>
