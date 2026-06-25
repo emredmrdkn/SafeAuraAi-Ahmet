@@ -57,10 +57,13 @@ export default function LandingPage() {
           </nav>
 
           <div className="flex items-center gap-4">
-            {/* Desktop Get a Quote Button (Visible on lg and up) */}
-            <button className="hidden lg:inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-white bg-orange-500 rounded-full hover:bg-orange-400 transition-all shadow-[0_0_15px_rgba(249,115,22,0.3)]">
-              Get a Quote
-            </button>
+            {/* Desktop Quote Button (Visible on lg and up) */}
+            <a 
+              href="tel:+61421781826"
+              className="hidden lg:inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-white bg-orange-500 rounded-full hover:bg-orange-400 transition-all shadow-[0_0_15px_rgba(249,115,22,0.3)]"
+            >
+              Quote
+            </a>
 
             {/* Hamburger Button for Mobile/Tablet (Visible below lg) */}
             <label 
@@ -81,9 +84,12 @@ export default function LandingPage() {
           <a href="#services" className="text-neutral-300 hover:text-white py-2.5 text-base border-b border-white/5">Case Studies</a>
           <a href="#services" className="text-neutral-300 hover:text-white py-2.5 text-base border-b border-white/5">Contact</a>
           <div className="pt-4">
-            <button className="w-full flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-orange-500 rounded-full hover:bg-orange-400 transition-all shadow-[0_0_15px_rgba(249,115,22,0.3)]">
-              Get a Quote
-            </button>
+            <a 
+              href="tel:+61421781826"
+              className="w-full flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-orange-500 rounded-full hover:bg-orange-400 transition-all shadow-[0_0_15px_rgba(249,115,22,0.3)]"
+            >
+              Quote
+            </a>
           </div>
         </div>
       </header>
@@ -159,9 +165,12 @@ export default function LandingPage() {
               <button className="px-8 py-3 text-sm font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-500 transition-all shadow-[0_4px_14px_rgba(37,99,235,0.3)]">
                 Our Services
               </button>
-              <button className="px-8 py-3 text-sm font-semibold text-white bg-transparent border border-white/20 rounded-lg hover:bg-white/10 transition-all">
-                Get a Quote
-              </button>
+              <a 
+                href="tel:+61421781826"
+                className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold text-white bg-transparent border border-white/20 rounded-lg hover:bg-white/10 transition-all"
+              >
+                Quote
+              </a>
             </div>
           </div>
         </div>
@@ -495,7 +504,7 @@ export default function LandingPage() {
                 <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-neutral-300 hover:bg-blue-500 hover:text-white transition-all">
                   <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </a>
-                <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-neutral-300 hover:bg-emerald-500 hover:text-white transition-all">
+                <a href="tel:+61421781826" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-neutral-300 hover:bg-emerald-500 hover:text-white transition-all">
                   <Phone className="h-4 w-4" />
                 </a>
               </div>
@@ -531,7 +540,7 @@ export default function LandingPage() {
               <ul className="space-y-4 text-sm text-neutral-400 mb-6">
                 <li className="flex items-center justify-center md:justify-start gap-3">
                   <Phone className="h-4 w-4 text-neutral-500" />
-                  +61 4XX XXX XXX
+                  <a href="tel:+61421781826" className="hover:text-blue-400 transition-colors">+61 421 781 826</a>
                 </li>
                 <li className="flex items-center justify-center md:justify-start gap-3">
                   <Mail className="h-4 w-4 text-neutral-500" />
@@ -542,9 +551,12 @@ export default function LandingPage() {
                   Sydney, NSW, Australia
                 </li>
               </ul>
-              <button className="w-full md:w-auto px-6 py-2.5 text-sm font-semibold text-white bg-orange-500 rounded-full hover:bg-orange-400 transition-all shadow-[0_0_15px_rgba(249,115,22,0.3)]">
-                Get a Quote
-              </button>
+              <a 
+                href="tel:+61421781826"
+                className="w-full md:w-auto inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-white bg-orange-500 rounded-full hover:bg-orange-400 transition-all shadow-[0_0_15px_rgba(249,115,22,0.3)]"
+              >
+                Quote
+              </a>
             </div>
           </div>
           
