@@ -97,19 +97,19 @@ export default function LandingPage() {
       {/* 2. HERO SECTION (Dark Theme, Compact, Right-Aligned Photo) */}
       <section className="relative min-h-[85vh] pt-28 pb-16 lg:pt-32 lg:pb-20 flex items-center justify-center md:justify-start text-white overflow-hidden bg-[#030712]">
         
-        {/* Full-screen Background Image with gradients for readability */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Right-aligned Hero Background Image with fade gradient */}
+        <div className="absolute right-0 top-0 bottom-0 w-full md:w-[65%] lg:w-[55%] xl:w-[50%] h-full z-0 pointer-events-none">
           <Image 
             src="/assets/hero_drone_new.jpg" 
             alt="Drone pilot inspecting construction site" 
             fill 
             priority
             quality={95}
-            sizes="100vw"
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover object-[75%_38%] md:object-[right_38%]"
           />
           {/* Dark overlay gradients to ensure content readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/85 md:via-[#030712]/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/90 md:from-[#030712] md:via-[#030712]/60 to-transparent"></div>
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#030712] to-transparent"></div>
         </div>
 
